@@ -228,7 +228,7 @@ export default function DashboardPage() {
                 
                 <div className="space-y-2">
                   <label htmlFor="potencia" className="text-sm font-medium text-foreground">
-                    Potencia Total (kW)
+                    Potencia Total (W)
                   </label>
                   <Input
                     id="potencia"
@@ -334,7 +334,7 @@ export default function DashboardPage() {
                 <CardContent>
                   <div className="mb-4">
                     <p className="text-sm text-muted-foreground">Potencia Total</p>
-                    <p className="text-2xl font-bold text-foreground">{sistema.potenciaTotal} kW</p>
+                    <p className="text-2xl font-bold text-foreground">{sistema.potenciaTotal} W</p>
                   </div>
                   
                   <div className="flex gap-2">
