@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://solarmetrics-backend.brazilsouth.cloudapp.azure.com:8080'
+const API_BASE_URL = 'https://solarmetrics-api.grouparc.com.br'
 
 export interface Sistema {
   id: string
