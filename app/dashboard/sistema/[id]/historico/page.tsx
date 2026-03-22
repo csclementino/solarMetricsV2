@@ -211,7 +211,7 @@ export default function HistoricoPage() {
                   <Bar 
                     dataKey="totalConsumo" 
                     name="Consumo"
-                    fill="#22293e" 
+                    fill="#c55f4c" 
                     radius={[4, 4, 0, 0]}
                   />
                 </BarChart>

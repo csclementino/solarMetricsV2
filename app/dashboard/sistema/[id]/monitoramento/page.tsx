@@ -49,7 +49,7 @@ export default function MonitoramentoPage({ params }: PageProps) {
   const [currentConsumption, setCurrentConsumption] = useState(0)
   const mqttClientRef = useRef<MqttClient | null>(null)
 
-  const BROKER_URL = 'wss://solarmetrics.brazilsouth.cloudapp.azure.com:8084/mqtt'
+  const BROKER_URL = 'wss://mqtt.grouparc.com.br:8084/mqtt'
   const PASSWORD = 'solarmetrics'
 
   const connectMQTT = useCallback(async () => {
@@ -224,7 +224,7 @@ export default function MonitoramentoPage({ params }: PageProps) {
               <div>
                 <p className="text-sm text-muted-foreground">Geracao Atual</p>
                 <p className="text-3xl font-bold text-primary">
-                  {isConnected ? `${currentGeneration.toFixed(2)} kW` : '-- kW'}
+                  {isConnected ? `${currentGeneration.toFixed(0)} W` : '-- W'}
                 </p>
               </div>
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
@@ -240,8 +240,8 @@ export default function MonitoramentoPage({ params }: PageProps) {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-muted-foreground">Consumo Atual</p>
-                <p className="text-3xl font-bold text-foreground">
-                  {isConnected ? `${currentConsumption.toFixed(2)} kW` : '-- kW'}
+                <p className="text-3xl font-bold text-[#c55f4c]">
+                  {isConnected ? `${currentConsumption.toFixed(0)} W` : '-- W'}
                 </p>
               </div>
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10">
@@ -273,7 +273,7 @@ export default function MonitoramentoPage({ params }: PageProps) {
                 />
               </div>
               <p className="mt-1 text-xs text-muted-foreground">
-                Capacidade: {selectedSystem.potenciaTotal} kW
+                Capacidade: {selectedSystem.potenciaTotal} W
               </p>
             </div>
           </CardContent>
@@ -286,7 +286,7 @@ export default function MonitoramentoPage({ params }: PageProps) {
               <div>
                 <p className="text-sm text-muted-foreground">Saldo de Energia</p>
                 <p className={`text-3xl font-bold ${isConnected ? (isPositiveBalance ? 'text-green-500' : 'text-destructive') : 'text-muted-foreground'}`}>
-                  {isConnected ? `${isPositiveBalance ? '+' : ''}${energyBalance.toFixed(2)} kW` : '-- kW'}
+                  {isConnected ? `${isPositiveBalance ? '+' : ''}${energyBalance.toFixed(0)} W` : '-- W'}
                 </p>
               </div>
               <div className={`flex h-12 w-12 items-center justify-center rounded-full ${isConnected ? (isPositiveBalance ? 'bg-green-500/10' : 'bg-destructive/10') : 'bg-muted'}`}>
@@ -330,7 +330,7 @@ export default function MonitoramentoPage({ params }: PageProps) {
                 <YAxis
                   stroke="var(--muted-foreground)"
                   tick={{ fill: 'var(--muted-foreground)', fontSize: 12 }}
-                  unit=" kW"
+                  unit=" W"
                   domain={[0, 'auto']}
                 />
                 <Tooltip
@@ -340,7 +340,7 @@ export default function MonitoramentoPage({ params }: PageProps) {
                     borderRadius: '8px',
                     color: 'var(--card-foreground)'
                   }}
-                  formatter={(value: number) => [`${value.toFixed(2)} kW`]}
+                  formatter={(value: number) => [`${value.toFixed(2)} W`]}
                 />
                 <Legend />
                 <Line
@@ -356,7 +356,7 @@ export default function MonitoramentoPage({ params }: PageProps) {
                   type="monotone"
                   dataKey="consumo"
                   name="Consumo"
-                  stroke="#22293e"
+                  stroke="#c55f4c"
                   strokeWidth={2}
                   dot={false}
                   activeDot={{ r: 4 }}

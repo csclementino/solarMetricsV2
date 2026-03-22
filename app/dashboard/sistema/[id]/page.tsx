@@ -87,7 +87,7 @@ export default function SistemaResumoPage({ params }: PageProps) {
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Potencia Total</p>
-              <p className="text-2xl font-bold text-foreground">{selectedSystem.potenciaTotal} kW</p>
+              <p className="text-2xl font-bold text-foreground">{selectedSystem.potenciaTotal} W</p>
             </div>
           </CardContent>
         </Card>
@@ -153,7 +153,7 @@ export default function SistemaResumoPage({ params }: PageProps) {
             </div>
             <div className="flex items-center justify-between border-b border-border pb-3">
               <span className="text-muted-foreground">Potencia Total</span>
-              <span className="font-medium text-foreground">{selectedSystem.potenciaTotal} kW</span>
+              <span className="font-medium text-foreground">{selectedSystem.potenciaTotal} W</span>
             </div>
             <div className="flex items-center justify-between border-b border-border pb-3">
               <span className="text-muted-foreground">Data de Instalacao</span>

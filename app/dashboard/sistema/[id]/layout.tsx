@@ -132,7 +132,7 @@ function SystemLayoutContent({
           <div className="border-b border-sidebar-border p-4">
             <p className="text-xs text-sidebar-foreground/60">Sistema Selecionado</p>
             <p className="font-semibold text-sidebar-foreground">{selectedSystem.nomeInstalacao}</p>
-            <p className="text-sm text-sidebar-foreground/80">{selectedSystem.potenciaTotal} kW</p>
+            <p className="text-sm text-sidebar-foreground/80">{selectedSystem.potenciaTotal} W</p>
           </div>
 
           {/* Navigation */}
