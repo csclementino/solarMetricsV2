@@ -74,7 +74,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const login = async (email: string, password: string) => {
     const credentials = btoa(`${email}:${password}`)
 
-    const response = await fetch('https://solarmetrics-api.grouparc.com.br:8080/auth', {
+    const response = await fetch('https://solarmetrics-api.grouparc.com.br/auth', {
       method: 'POST',
       headers: {
         'Authorization': `Basic ${credentials}`,
@@ -103,7 +103,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   const register = async (data: RegisterData) => {
-    const response = await fetch('https://solarmetrics-api.grouparc.com.br:8080/cliente', {
+    const response = await fetch('https://solarmetrics-api.grouparc.com.br/cliente', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
