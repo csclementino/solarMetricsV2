@@ -49,7 +49,7 @@ export default function MonitoramentoPage({ params }: PageProps) {
   const [currentConsumption, setCurrentConsumption] = useState(0)
   const mqttClientRef = useRef<MqttClient | null>(null)
 
-  const BROKER_URL = 'ws://solarmetrics.brazilsouth.cloudapp.azure.com:8083/mqtt'
+  const BROKER_URL = 'wss://mqtt.grouparc.com.br:8084/mqtt'
   const PASSWORD = 'solarmetrics'
 
   const connectMQTT = useCallback(async () => {
