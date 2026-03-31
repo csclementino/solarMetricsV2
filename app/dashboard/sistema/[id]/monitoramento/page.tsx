@@ -50,7 +50,7 @@ export default function MonitoramentoPage({ params }: PageProps) {
   const mqttClientRef = useRef<MqttClient | null>(null)
 
   const BROKER_URL = 'wss://mqtt.grouparc.com.br:8084/mqtt'
-  const PASSWORD = 'solarmetrics'
+  const USERNAME = 'EmqxJwtUser'
 
   const connectMQTT = useCallback(async () => {
     if (!accessToken || !resolvedParams.id) {
@@ -71,8 +71,8 @@ export default function MonitoramentoPage({ params }: PageProps) {
       const mqtt = await import('mqtt')
       
       const client = mqtt.default.connect(BROKER_URL, {
-        username: accessToken,
-        password: PASSWORD,
+        username: USERNAME,
+        password: accessToken,
         clientId: `solarmetrics_${resolvedParams.id}_${Date.now()}`,
         clean: true,
         reconnectPeriod: 5000,
