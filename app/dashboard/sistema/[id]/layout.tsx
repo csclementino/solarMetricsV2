@@ -114,12 +114,12 @@ function SystemLayoutContent({
           {/* Sidebar Header */}
           <div className="flex h-16 items-center justify-between border-b border-sidebar-border px-4">
             <Link href="/dashboard" className="flex items-center gap-3">
-              <div className="flex items-center">
+              <div className="flex justify-center items-center">
                 <Image 
                   src="/logo-maior.svg" 
                   alt="SolarMetrics" 
-                  width={140} 
-                  height={21} 
+                  width={130} 
+                  height={10.5} 
                   priority
                 />
               </div>
