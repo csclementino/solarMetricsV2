@@ -8,7 +8,8 @@ import { Input } from '@/components/ui/input'
 import { Card, CardContent } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Sun, Zap, BarChart3, Leaf, ArrowRight } from 'lucide-react'
+import { Zap, BarChart3, Leaf, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState('login')
@@ -102,9 +103,14 @@ export default function HomePage() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto flex h-14 items-center justify-between px-4">
-          <div className="flex items-center gap-2">
-            <Sun className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium tracking-tight">SolarMetrics</span>
+          <div className="flex items-center">
+            <Image 
+              src="/logo.svg" 
+              alt="SolarMetrics" 
+              width={140} 
+              height={21} 
+              priority
+            />
           </div>
           <nav className="flex items-center gap-6">
             <a href="#features" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
@@ -411,9 +417,13 @@ export default function HomePage() {
       <footer className="py-8 border-t border-border/50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Sun className="h-4 w-4 text-primary" />
-              <span className="text-xs text-muted-foreground">SolarMetrics</span>
+            <div className="flex items-center">
+              <Image 
+                src="/logo.svg" 
+                alt="SolarMetrics" 
+                width={120} 
+                height={18} 
+              />
             </div>
             <p className="text-xs text-muted-foreground">
               2024 Todos os direitos reservados

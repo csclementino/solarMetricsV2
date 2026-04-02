@@ -27,7 +27,9 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
-import { Sun, Plus, Trash2, Eye, LogOut, Zap, Calendar, Power } from 'lucide-react'
+import { Zap, BarChart3, Leaf, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
+
 
 export default function DashboardPage() {
   const { user, accessToken, isAuthenticated, isLoading, logout } = useAuth()
@@ -152,10 +154,12 @@ export default function DashboardPage() {
       <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-              <Sun className="h-6 w-6 text-primary-foreground" />
-            </div>
-            <span className="text-xl font-bold text-foreground">SolarMetrics</span>
+            <Image 
+              src="/logo.svg" 
+              alt="SolarMetrics" 
+              width={120} 
+              height={18} 
+            />
           </div>
           
           <div className="flex items-center gap-4">
