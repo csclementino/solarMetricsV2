@@ -27,9 +27,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
-import { Plus, Trash2, Eye, LogOut, Zap, Calendar, Power } from 'lucide-react'
+import { Sun, Plus, Trash2, Eye, LogOut, Zap, Calendar, Power } from 'lucide-react'
 import Image from 'next/image'
-
 
 export default function DashboardPage() {
   const { user, accessToken, isAuthenticated, isLoading, logout } = useAuth()
