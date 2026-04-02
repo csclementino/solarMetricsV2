@@ -118,8 +118,8 @@ function SystemLayoutContent({
                 <Image 
                   src="/logo-maior.svg" 
                   alt="SolarMetrics" 
-                  width={40} 
-                  height={40} 
+                  width={140} 
+                  height={21} 
                   priority
                 />
               </div>
