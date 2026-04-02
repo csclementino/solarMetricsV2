@@ -18,6 +18,7 @@ import {
   X
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 
 interface SystemLayoutProps {
   children: React.ReactNode
@@ -113,10 +114,15 @@ function SystemLayoutContent({
           {/* Sidebar Header */}
           <div className="flex h-16 items-center justify-between border-b border-sidebar-border px-4">
             <Link href="/dashboard" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-sidebar-primary">
-                <Sun className="h-6 w-6 text-sidebar-primary-foreground" />
+              <div className="flex items-center">
+                <Image 
+                  src="/logo-maior.svg" 
+                  alt="SolarMetrics" 
+                  width={40} 
+                  height={40} 
+                  priority
+                />
               </div>
-              <span className="text-lg font-bold text-sidebar-foreground">SolarMetrics</span>
             </Link>
             <Button
               variant="ghost"
